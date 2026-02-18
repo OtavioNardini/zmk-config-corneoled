@@ -13,6 +13,12 @@
                 <&pro_micro 3 GPIO_ACTIVE_HIGH>;
 };
 
+/ {
+    chosen {
+        zephyr,display = &ssd1306;
+    };
+};
+
 &i2c0 {
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
@@ -25,15 +31,6 @@
 
         width = <128>;
         height = <32>;
-
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-
-        prechargep = <0x22>;
-        com-invdir;
-        segment-remap;
     };
 };
 
