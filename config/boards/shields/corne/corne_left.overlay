@@ -8,3 +8,17 @@
                 <&pro_micro 7 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 2 GPIO_ACTIVE_HIGH>;
 };
+
+&i2c0 {
+   
+    status = "okay";
+    sda-pin = <9>;
+    scl-pin = <8>;
+
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+    };
+};
